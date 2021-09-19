@@ -1,9 +1,17 @@
 #include "buffer.h"
 #include <cassert>
 
- string Buffer::read()
+ void Buffer::read()
  {
-     return "";
+     string temp, fileRec;
+     for (int i=0; i<3; i++)
+        getline(bigChungus, temp);
+     while (!eof())
+     {
+         getline(bigChungus, fileRec);
+         unpack(fileRec);
+     }
+     getLine();
  };
  
  Record Buffer::unpack(string str)
@@ -107,6 +115,19 @@
  
  void Buffer::vectorAlphabetize(vector<vector <Record>> outer)
  {
+     vector<vector<Record>> temp;
+     for (int i=0; i<outer.size(); i++)
+     {
+         for (int j=i+1; j<outer.size(); j++)
+         {
+             if (outer[i][j].state.compare(outer[i][j+1].state) > 0)
+             {
+                 temp = outer[i][j];
+                 outer[i][j] = outer[i][j+1];
+                 outer[i][j+1] = temp;
+             }
+         }
+     }
  };
  
  void Buffer::generateTable(vector<vector <Record>> outer)
