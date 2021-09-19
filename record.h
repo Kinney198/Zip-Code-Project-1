@@ -10,9 +10,6 @@ using namespace std;
 class Record
 {
  public:
- /**<
- // default constructor
- */
  Record()
  {
      state = "";
@@ -22,9 +19,7 @@ class Record
      placeName = "";
      county = "";
  }
- /**<
- // contructor with parameters
- */
+
  Record(string st, double la, double lo, int zip, string place, string count)
  {
      state = st;
@@ -34,19 +29,12 @@ class Record
      placeName = place;
      county = count;
  }
- /**<
- //returns state abreviation
- */
  string get_state();
- /**<
- returns zip code lattitude
- */
  double get_lat();
- /**< returns zip code longitude */
  double get_long();
-
  int get_zip();
- private:
+ 
+ public:
  string state;
  double lat;
  double lon;
