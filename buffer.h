@@ -11,11 +11,11 @@ using namespace std;
 class Buffer
 {
  public:
- 
+ vector<vector <Record>> outer;
  Buffer()
  {
  }
- string read();
+ void read();
  
  Record unpack(string str);
  
@@ -25,17 +25,18 @@ class Buffer
  
  bool checkExist(Record rec);
  
- void vectorAlphabetize(vector<vector <Record>> outer);
+ void vectorAlphabetize(vector<vector<Record>> &outer);
  
- void generateTable(vector<vector <Record>> outer);
+ void generateTable(vector<vector<Record>> outer);
+
+ void recordOrganize(Record rec);
  
 private:
- vector<vector <Record>> outer;
  Record northern = Record();
  Record southern = Record();
  Record eastern = Record();
  Record western = Record();
- 
+ ifstream upc;
 };
 
 #endif

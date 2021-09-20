@@ -7,20 +7,8 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello World" << endl;
-    return 0;
-}
-
-void recordOrganize(Buffer buffer, Record rec)
-{
-    if (buffer.checkExist(rec))
-    {
-        buffer.addToVector(rec);
-    }
-    else
-    {
-        buffer.createInnerVector(rec);
-    }
-        
-
+    Buffer buffer;
+    buffer.read();
+    buffer.vectorAlphabetize(buffer.outer);
+    buffer.generateTable(buffer.outer);
 }
