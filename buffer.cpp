@@ -164,11 +164,11 @@ void Buffer::generateTable(vector<vector <Record>> outer)
             {
                 southern = outer[i][j];
             }
-            if (eastern.get_state() == "" || (eastern.get_long() > outer[i][j].get_long()))
+            if (eastern.get_state() == "" || (eastern.get_long() < outer[i][j].get_long()))
             {
                 eastern = outer[i][j];
             }
-            if (western.get_state() == "" || (western.get_long() < outer[i][j].get_long()))
+            if (western.get_state() == "" || (western.get_long() > outer[i][j].get_long()))
             {
                 western = outer[i][j];
             }
